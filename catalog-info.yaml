@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wlijjmbc4-python-gitops
+  description: This is GitOps manifest for wlijjmbc4-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=wlijjmbc4-python
+    backstage.io/kubernetes-id: wlijjmbc4-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wlijjmbc4-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wlijjmbc4-python
